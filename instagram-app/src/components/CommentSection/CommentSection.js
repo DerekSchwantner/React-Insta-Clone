@@ -1,14 +1,13 @@
 import React from "react";
+import Comment from "./Comment";
 
 const CommentSection = props => {
-  console.log(props.comments);
+  //   console.log(props.comments);
   return (
-    <div className="comments">
-      <h2>
-        {props.comments.map(comment => {
-          return <p>{comment.username}</p>;
-        })}
-      </h2>
+    <div className="comments-section">
+      <p>
+        <Comment comments={props.comments} />
+      </p>
     </div>
   );
 };
