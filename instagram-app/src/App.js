@@ -1,6 +1,5 @@
 import React from "react";
-import logo from "./logo.svg";
-import "./App.css";
+import "./App.scss";
 import dummyData from "./dummy-data.js";
 import PostContainer from "./components/PostContainer/PostContainer";
 import SearchBar from "./components/SearchBar/SearchBar";
@@ -9,9 +8,16 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      data: dummyData
+      data: []
     };
   }
+
+  componentDidMount() {
+    this.setState({
+      data: dummyData
+    });
+  }
+
   render() {
     console.log(this.state.data);
     return (
