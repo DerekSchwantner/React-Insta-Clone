@@ -1,12 +1,5 @@
 import React from "react";
 import "./SearchBar.scss";
-// const SearchBar = props => {
-//   return (
-//     <div className="search-bar">
-//
-//     </div>
-//   );
-// };
 
 class SearchBar extends React.Component {
   render() {
@@ -18,7 +11,14 @@ class SearchBar extends React.Component {
               Instagram
             </a>
           </div>
-          <input type="text" className="input" placeholder="Search..." />
+          <input
+            name="search"
+            type="text"
+            onChange={this.props.searchFilter}
+            className="input"
+            // value={this.props.newSearch}
+            placeholder="Search..."
+          />
         </div>
       </nav>
     );

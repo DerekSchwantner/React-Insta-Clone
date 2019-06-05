@@ -53,3 +53,16 @@
   visibility: hidden;
   opacity: 0;
 }
+
+.likes {
+  display: flex;
+  flex-direction: row;
+  button {
+    border: none;
+    font-size: 20px;
+    margin-right: 20px;
+  }
+  .likes-count {
+    margin-top: 3px;
+  }
+}
