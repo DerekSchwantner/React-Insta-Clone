@@ -2,6 +2,12 @@ import React from "react";
 import "./SearchBar.scss";
 
 class SearchBar extends React.Component {
+  logout = e => {
+    e.preventDefault();
+    localStorage.removeItem("User");
+    window.location.reload();
+  };
+
   render() {
     return (
       <nav className="Nav">
@@ -16,9 +22,11 @@ class SearchBar extends React.Component {
             type="text"
             onChange={this.props.searchFilter}
             className="input"
-            // value={this.props.newSearch}
             placeholder="Search..."
           />
+          <button className="logout-btn" onClick={this.logout}>
+            Logout
+          </button>
         </div>
       </nav>
     );

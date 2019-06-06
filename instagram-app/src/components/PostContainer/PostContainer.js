@@ -1,25 +1,22 @@
 import React from "react";
 import PropTypes from "prop-types";
 import "./PostContainer.scss";
-import { Post } from "./Post.js";
-import { FilteredPost } from "./Post.js";
-
+import Post from "./Post";
 class PostContainer extends React.Component {
   render() {
     return (
       <div className="posts">
-        {this.props.filteredPosts.length === 0}?{" "}
-        <Post
-          posts={this.props.posts}
-          filteredPosts={this.props.filteredPosts}
-          searchFilter={this.searchFilter}
-        />
-        :
-        <FilteredPost
-          posts={this.props.posts}
-          filteredPosts={this.props.filteredPosts}
-          searchFilter={this.searchFilter}
-        />
+        {this.props.filteredPosts.length === 0
+          ? this.props.posts.map((post, i) => {
+              return (
+                <Post addLikes={this.props.addLikes} key={i} post={post} />
+              );
+            })
+          : this.props.filteredPosts.map((post, i) => {
+              return (
+                <Post addLikes={this.props.addLikes} key={i} post={post} />
+              );
+            })}
       </div>
     );
   }
